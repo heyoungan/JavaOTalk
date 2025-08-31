@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+CreateChatRoomDialog.fxml:
+- 그룹 채팅방 생성 다이얼로그의 UI를 정의.
+- CreateChatRoomDialogController와 연결.
+- 사용자 입력:
+  1. 방 이름 입력
+  2. 친구 선택 (다중 선택 가능)
+-->
+
+<VBox spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="client.CreateChatRoomDialogController"
+      alignment="CENTER">
+
+    <!-- 다이얼로그 제목 -->
+    <Label text="Create Chat Room" styleClass="title-label"/>
+
+    <!-- 방 이름 입력 필드 -->
+    <TextField fx:id="roomNameField" 
+               promptText="Room Name" 
+               maxWidth="200"/>
+    
+    <!-- 친구 목록 (다중 선택 가능한 ListView) -->
+    <ListView fx:id="friendListView" 
+              prefHeight="200" 
+              prefWidth="200"/>
+
+    <!-- 상태 메시지 표시 라벨 -->
+    <Label fx:id="statusLabel" 
+           textFill="red"/>
+
+    <!-- 채팅방 생성 버튼 -->
+    <Button text="Create" 
+            onAction="#onCreate"/>
+</VBox>

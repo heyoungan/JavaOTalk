@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+SendFriendRequestDialog.fxml:
+- 친구 요청을 보내는 다이얼로그의 UI를 정의.
+- SendFriendRequestDialogController와 연결.
+- 주요 구성:
+  1. 사용자 이름 입력 필드
+  2. 상태 메시지 표시 라벨
+  3. 요청 전송 버튼
+-->
+
+<VBox spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="client.SendFriendRequestDialogController"
+      alignment="CENTER">
+    
+    <!-- 다이얼로그 제목 -->
+    <Label text="Send Friend Request" styleClass="title-label"/>
+    
+    <!-- 친구 아이디 입력 필드 -->
+    <TextField fx:id="usernameField" 
+               promptText="Friend's Username" 
+               maxWidth="200"/>
+    
+    <!-- 상태 메시지를 표시하는 라벨 -->
+    <Label fx:id="statusLabel" 
+           textFill="red"/>
+    
+    <!-- 요청 전송 버튼 -->
+    <Button text="Send Request" 
+            onAction="#onSend"/>
+</VBox>

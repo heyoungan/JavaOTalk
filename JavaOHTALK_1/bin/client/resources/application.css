@@ -1,0 +1,52 @@
+.root {
+    -fx-font-family: 'Sans-Serif';
+    -fx-background-color: #FAFAFA;
+}
+
+/* 제목 라벨 스타일 */
+.title-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 5 0 5 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-style: solid;
+    -fx-border-color: #cccccc;
+}
+
+.button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 4px;
+    -fx-padding: 5 15;
+}
+
+.button:hover {
+    -fx-background-color: #1976D2;
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+.text-field, .password-field {
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 4px;
+    -fx-padding: 5;
+    -fx-border-color: #cccccc;
+}
+
+.list-view {
+    -fx-border-color: #cccccc;
+    -fx-background-color: #ffffff;
+}
+
+.list-cell {
+    -fx-padding: 5;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #BBDEFB;
+}

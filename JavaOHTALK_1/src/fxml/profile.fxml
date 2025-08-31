@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+Profile.fxml:
+- 사용자 프로필 화면의 UI를 정의.
+- ProfileController와 연결.
+- 주요 구성:
+  1. 프로필 이미지
+  2. 사용자 정보 (아이디, 닉네임)
+  3. 닫기 버튼
+-->
+
+<VBox spacing="10"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="client.ProfileController"
+      alignment="CENTER">
+    
+    <!-- 화면 제목 -->
+    <Label text="My Profile" styleClass="title-label"/>
+    
+    <!-- 프로필 이미지 -->
+    <ImageView fx:id="profileImageView" 
+               fitWidth="100" 
+               fitHeight="100" 
+               preserveRatio="true"/>
+    
+    <!-- 사용자 아이디 및 닉네임 -->
+    <Label fx:id="usernameLabel"/>
+    <Label fx:id="nicknameLabel"/>
+    
+    <!-- 닫기 버튼 -->
+    <Button text="Close" 
+            onAction="#onClose"/>
+</VBox>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+Main.fxml:
+- 메인 화면의 UI를 정의.
+- MainController와 연결.
+- 주요 구성:
+  1. 상단: 사용자 프로필 및 주요 기능 버튼
+  2. 중앙: 친구 목록과 채팅방 목록
+-->
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="client.MainController">
+
+    <!-- 상단 영역 -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding:10;">
+            <!-- 사용자 환영 메시지 -->
+            <Label text="Hello, "/>
+            <!-- 사용자 닉네임 표시 -->
+            <Label fx:id="nicknameLabel"/>
+
+            <!-- 주요 기능 버튼 -->
+            <Button text="Profile" onAction="#onProfile"/>
+            <Button text="Send Friend Request" onAction="#onSendFriendRequest"/>
+            <Button text="Friend Requests" onAction="#onShowFriendRequests"/>
+            <Button text="Create Chat Room" onAction="#onCreateChatRoom"/>
+        </HBox>
+    </top>
+
+    <!-- 중앙 영역 -->
+    <center>
+        <SplitPane>
+            <!-- 왼쪽: 친구 목록 -->
+            <VBox spacing="10" style="-fx-padding:10;">
+                <!-- 친구 목록 섹션 -->
+                <Label text="Friends"/>
+                <!-- 친구 목록 표시 -->
+                <ListView fx:id="friendListView"/>
+                
+                <!-- "대화하기" 버튼 -->
+                <Button fx:id="chatWithButton" 
+                        text="대화하기" 
+                        onAction="#onChatWith" 
+                        disable="true"/>
+                <!-- 친구 목록 새로고침 버튼 -->
+                <Button text="Refresh Friends" onAction="#onRefreshFriends"/>
+            </VBox>
+
+            <!-- 오른쪽: 채팅방 목록 -->
+            <VBox spacing="10" style="-fx-padding:10;">
+                <!-- 채팅방 목록 섹션 -->
+                <Label text="Chat Rooms"/>
+                <!-- 채팅방 목록 표시 -->
+                <ListView fx:id="roomListView"/>
+                
+                <!-- 채팅방 목록 새로고침 버튼 -->
+                <Button text="Refresh Rooms" onAction="#onRefreshRooms"/>
+                <!-- 채팅방 열기 버튼 -->
+                <Button text="Open Chat" onAction="#onOpenChat"/>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>

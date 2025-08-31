@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="client.LoginController"
+      spacing="10"
+      alignment="CENTER">
+    
+    <!-- 제목 -->
+    <Label text="Login" styleClass="title-label"/>
+
+    <!-- 아이디 입력 -->
+    <TextField fx:id="usernameField" promptText="Username" maxWidth="200"/>
+
+    <!-- 비밀번호 입력 -->
+    <PasswordField fx:id="passwordField" promptText="Password" maxWidth="200"/>
+
+    <!-- 버튼들 (로그인/회원가입) -->
+    <HBox spacing="10">
+        <Button text="Login" onAction="#onLogin"/>
+        <Button text="Register" onAction="#onRegister"/>
+    </HBox>
+
+    <!-- 상태(오류메시지) -->
+    <Label fx:id="statusLabel" textFill="red"/>
+</VBox>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<!--
+EmojiPickerDialog.fxml:
+- 이모티콘 선택 다이얼로그의 UI를 정의.
+- EmojiPickerDialogController와 연결.
+- 주요 구성:
+  1. FlowPane: 이모티콘 버튼 배치
+  2. ButtonType: OK 및 Cancel 버튼
+-->
+
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="client.EmojiPickerDialogController">
+
+    <!-- 다이얼로그 내용 -->
+    <content>
+        <!-- FlowPane: 이모티콘 버튼 배치 -->
+        <FlowPane fx:id="emojiFlow" 
+                  hgap="5" 
+                  vgap="5" 
+                  style="-fx-padding:10;"/>
+    </content>
+
+    <!-- 버튼 영역 -->
+    <buttonTypes>
+        <!-- OK 버튼 -->
+        <ButtonType fx:id="okButton" 
+                    text="OK" 
+                    buttonData="OK_DONE"/>
+        <!-- Cancel 버튼 -->
+        <ButtonType text="Cancel" 
+                    buttonData="CANCEL_CLOSE"/>
+    </buttonTypes>
+</DialogPane>

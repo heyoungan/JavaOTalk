@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+Add Friend Dialog FXML:
+- 친구 추가 다이얼로그의 UI 정의.
+- AddFriendDialogController와 연결되어 동작.
+-->
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="client.AddFriendDialogController" alignment="CENTER">
+
+    <!-- 제목 라벨 -->
+    <Label text="Add Friend" styleClass="title-label"/>
+    
+    <!-- 사용자 이름 입력 필드 -->
+    <TextField fx:id="usernameField" 
+               promptText="Friend's Username" 
+               maxWidth="200"/>
+    
+    <!-- 상태 메시지를 표시하는 라벨 -->
+    <Label fx:id="statusLabel" 
+           textFill="red"/>
+    
+    <!-- 친구 추가 버튼 -->
+    <Button text="Add" 
+            onAction="#onAdd"/>
+</VBox>

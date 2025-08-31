@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+ChatRoom.fxml:
+- 채팅방 UI를 정의하는 FXML 파일.
+- ChatRoomController와 연결되어 동작.
+- 구성 요소:
+  1. 채팅방 이름과 "나가기" 버튼 (상단)
+  2. 메시지 리스트뷰 (중앙)
+  3. 메시지 입력 및 전송 버튼 (하단)
+-->
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="client.ChatRoomController">
+
+    <!-- 상단 영역: 채팅방 제목과 나가기 버튼 -->
+    <top>
+        <HBox spacing="10" style="-fx-padding:10;" alignment="CENTER_LEFT">
+            <!-- 채팅방 이름 표시 라벨 -->
+            <Label fx:id="roomNameLabel" styleClass="title-label"/>
+            
+            <!-- 채팅방 나가기 버튼 -->
+            <Button fx:id="leaveButton" text="나가기" onAction="#onLeaveRoom"/>
+        </HBox>
+    </top>
+
+    <!-- 중앙 영역: 메시지 리스트뷰 -->
+    <center>
+        <VBox spacing="5" style="-fx-padding:10;">
+            <!-- 메시지 목록을 표시하는 리스트뷰 -->
+            <ListView fx:id="messageListView" />
+        </VBox>
+    </center>
+
+    <!-- 하단 영역: 메시지 입력 및 전송 -->
+    <bottom>
+        <HBox spacing="10" style="-fx-padding:10;">
+            <!-- 메시지 입력 필드 -->
+            <TextField fx:id="messageField" promptText="Type your message..."/>
+            
+            <!-- 이모티콘 선택 버튼 -->
+            <Button text="이모티콘" onAction="#onEmojiPicker"/>
+            
+            <!-- 메시지 전송 버튼 -->
+            <Button text="Send" onAction="#onSend"/>
+        </HBox>
+    </bottom>
+</BorderPane>
